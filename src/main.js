@@ -57,7 +57,6 @@ function onSuccess(totalHits) {
   iziToast.success({
     title: 'OK',
     message: `Hooray! We found ${totalHits} images.`,
-    // iconUrl: './img/iconSuccess.svg',
     iconUrl: iconSuccess,
     theme: 'dark',
     color: 'rgb(89, 161, 13)',
@@ -69,7 +68,6 @@ function onError() {
     title: 'Error',
     message:
       'Sorry, there are no images matching your search query. Please try again!',
-    // iconUrl: './img/iconError.svg',
     iconUrl: iconError,
     theme: 'dark',
     color: 'rgb(239, 64, 64)',
