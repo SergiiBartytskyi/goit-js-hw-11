@@ -4,6 +4,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import fetchQuery from './js/pixabay-api';
 import render from './js/render-functions';
+import { iconSuccess, iconError } from './js/components';
 
 const refs = {
   formSearch: document.getElementById('search-form'),
@@ -34,30 +35,30 @@ function onSubmit(e) {
     return;
   }
   refs.loader.classList.remove('disable');
-
+  refs.gallery.innerHTML = '';
   fetchQuery(query)
     .then(response => {
-      refs.loader.classList.add('disable');
       if (response.totalHits) {
-        refs.gallery.innerHTML = '';
         onSuccess(response.totalHits);
         refs.gallery.insertAdjacentHTML('beforeend', render(response.hits));
-
         gallery.refresh();
       } else {
-        refs.gallery.innerHTML = '';
         onError();
       }
     })
     .catch(err => console.log(err))
-    .finally(refs.formSearch.reset());
+    .finally(() => {
+      refs.formSearch.reset();
+      refs.loader.classList.add('disable');
+    });
 }
 
 function onSuccess(totalHits) {
   iziToast.success({
     title: 'OK',
     message: `Hooray! We found ${totalHits} images.`,
-    iconUrl: './img/iconSuccess.svg',
+    // iconUrl: './img/iconSuccess.svg',
+    iconUrl: iconSuccess,
     theme: 'dark',
     color: 'rgb(89, 161, 13)',
   });
@@ -68,7 +69,8 @@ function onError() {
     title: 'Error',
     message:
       'Sorry, there are no images matching your search query. Please try again!',
-    iconUrl: './img/iconError.svg',
+    // iconUrl: './img/iconError.svg',
+    iconUrl: iconError,
     theme: 'dark',
     color: 'rgb(239, 64, 64)',
   });
