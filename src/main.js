@@ -2,7 +2,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { refs } from './components/refs';
 import { onSuccess, onError } from './components/notifications';
-import { FetchAPI } from './components/FetchAPI';
+import { FetchAPI } from './components/fetchService';
 import { appendImagesMarkup } from './components/appendImagesMarkup';
 
 const fetchAPI = new FetchAPI();
