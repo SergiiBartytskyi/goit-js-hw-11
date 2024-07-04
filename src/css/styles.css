@@ -61,8 +61,6 @@ button[type="submit"]:focus {
   background-color: rgba(255, 61, 0, 0.8);
 }
 
-/* loader */
-
 .loader {
   width: 48px;
   height: 48px;
@@ -105,8 +103,6 @@ button[type="submit"]:focus {
     clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
   }
 }
-
-/* */
 
 .disable {
   display: none;
