@@ -19,7 +19,6 @@ export class FetchAPI {
       if (response.status !== 200) {
         throw new Error(response.statusText);
       }
-
       return response.json();
     });
   }
