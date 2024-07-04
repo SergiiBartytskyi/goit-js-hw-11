@@ -20,7 +20,7 @@ export class FetchAPI {
       if (response.status !== 200) {
         throw new Error(response.statusText);
       }
-      console.log(apiKey);
+
       return response.json();
     });
   }
