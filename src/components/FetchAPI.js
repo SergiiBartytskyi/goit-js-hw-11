@@ -1,4 +1,5 @@
-import { API_KEY, BASE_URL } from './API';
+const API_KEY = '43934204-71edb5ce863d740adbd705f51';
+const BASE_URL = 'https://pixabay.com/api/';
 
 export class FetchAPI {
   constructor() {
@@ -8,7 +9,7 @@ export class FetchAPI {
   fetchQuery() {
     const params = new URLSearchParams({
       key: API_KEY,
-      q: `${this.searchQuery}`,
+      q: this.searchQuery,
       image_type: 'photo',
       orientation: 'horizontal',
       safesearch: true,
