@@ -1,7 +1,7 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { refs } from './components/refs';
-import { onError, onSuccess } from './components/notifications';
+import { onSuccess, onError } from './components/notifications';
 import { FetchAPI } from './components/fetchAPI';
 import { appendImagesMarkup } from './components/appendImagesMarkup';
 
